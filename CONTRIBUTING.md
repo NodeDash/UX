@@ -1,6 +1,6 @@
-# Contributing to Helium Device Manager
+# Contributing to Node Dash
 
-Thank you for your interest in contributing to the Helium Device Manager! This document provides guidelines and instructions for contributing to this project.
+Thank you for your interest in contributing to the Node Dash! This document provides guidelines and instructions for contributing to this project.
 
 ## Code of Conduct
 
@@ -104,4 +104,4 @@ By contributing to this project, you agree that your contributions will be licen
 
 If you have any questions about contributing, feel free to open an issue or reach out to the maintainers directly.
 
-Thank you for helping make the Helium Device Manager better!
+Thank you for helping make the Node Dash better!

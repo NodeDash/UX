@@ -53,7 +53,7 @@ const NotFoundPage: React.FC = () => {
         <div className="mt-12 mx-auto text-center">
           <img
             src="/device-manager-icon.svg"
-            alt="Device Manager"
+            alt="Node Dash"
             width="200px"
             className="mx-auto text-center"
           />

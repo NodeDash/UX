@@ -218,7 +218,7 @@ export default function MfaVerifyPage() {
                 isDarkMode ? "text-white" : "text-gray-900"
               }`}
             >
-              Device Manager
+              Node Dash
             </h1>
           </Link>
         </div>

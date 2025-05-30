@@ -1,10 +1,10 @@
-# Helium Device Manager
+# Node Dash
 
 A modern, flow-based device management layer for the Helium Network that sits on top of ChirpStack to provide an easier option to manage IoT devices with visual flow-based data routing.
 
 ## Overview
 
-Helium Device Manager simplifies IoT device management by providing a visual, flow-based interface for routing data between devices, functions, and integrations. Built with React, TypeScript, and Vite, this application offers a modern UI for managing your Helium Network devices through ChirpStack.
+Node Dash simplifies IoT device management by providing a visual, flow-based interface for routing data between devices, functions, and integrations. Built with React, TypeScript, and Vite, this application offers a modern UI for managing your Helium Network devices through ChirpStack.
 
 ### Key Features
 
@@ -135,7 +135,7 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ## Contributing
 
-We welcome contributions to the Helium Device Manager! This section outlines the process for contributing to the project.
+We welcome contributions to the Node Dash! This section outlines the process for contributing to the project.
 
 ### Code of Conduct
 
