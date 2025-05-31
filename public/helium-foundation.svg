@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="230" height="28">
+  <rect rx="4" width="230" height="28" fill="#5C33FF"></rect>
+  <g fill="#fff" text-anchor="middle" font-family="Verdana, sans-serif" font-size="10" dominant-baseline="middle">
+    <text x="115" y="14">Funded by Helium Foundation</text>
+  </g>
+</svg>
