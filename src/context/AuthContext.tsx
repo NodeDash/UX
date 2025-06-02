@@ -48,7 +48,8 @@ export interface MFALoginSession {
 }
 
 export interface MFAStatusResponse {
-  enabled: boolean;
+  verified: boolean;
+  message: string;
 }
 
 // Email verification types
@@ -355,8 +356,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setEmailVerificationLoading(true);
       setError(null);
 
+      console.log("AuthContext: Calling verifyEmailApi with:", { email, code });
       const response = await verifyEmailApi(email, code);
-      if (response.success) {
+      console.log("AuthContext: API response:", response);
+
+      if (response.verified) {
         setEmailVerified(true);
         setNeedsEmailVerification(false);
         return true;
@@ -364,6 +368,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         throw new Error(response.message || "Failed to verify email");
       }
     } catch (err) {
+      console.error("AuthContext: verifyEmail error:", err);
       setError(err instanceof Error ? err.message : "Failed to verify email");
       return false;
     } finally {

@@ -176,7 +176,12 @@
     "mfaCode": "Authentication Code",
     "mfaCodeLength": "Authentication code must be 6 digits",
     "orEnterManually": "Or enter this code manually into your app",
-    "continue": "Continue"
+    "continue": "Continue",
+    "emailVerifiedSuccessfully": "Email verified successfully! You can now log in.",
+    "passwordRequiresSpecial": "Password must contain at least one special character",
+    "passwordRequiresUppercase": "Password must contain at least one uppercase letter",
+    "passwordRequiresLowercase": "Password must contain at least one lowercase letter",
+    "passwordRequiresNumber": "Password must contain at least one number"
   },
   "flows": {
     "add": "Add Flow",

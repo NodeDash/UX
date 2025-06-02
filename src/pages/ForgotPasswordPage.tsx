@@ -77,7 +77,7 @@ export default function ForgotPasswordPage() {
                 isDarkMode ? "text-white" : "text-gray-900"
               }`}
             >
-              Node Dash
+              NodeDash
             </h1>
           </Link>
         </div>

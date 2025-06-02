@@ -33,6 +33,7 @@ interface LoginResult {
  * Response from an email verification operation.
  */
 interface EmailVerificationResponse {
+  verified: any;
   /** Status of the verification */
   status: string;
   /** Result message */

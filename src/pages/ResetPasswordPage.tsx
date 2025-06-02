@@ -175,7 +175,7 @@ export default function ResetPasswordPage() {
                   isDarkMode ? "text-white" : "text-gray-900"
                 }`}
               >
-                Node Dash
+                NodeDash
               </h1>
             </Link>
           </div>
@@ -239,7 +239,7 @@ export default function ResetPasswordPage() {
                 isDarkMode ? "text-white" : "text-gray-900"
               }`}
             >
-              Node Dash
+              NodeDash
             </h1>
           </Link>
         </div>

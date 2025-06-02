@@ -107,9 +107,20 @@ export default function EmailVerifyPage() {
     }
 
     try {
+      console.log(
+        "Attempting to verify email:",
+        email,
+        "with code:",
+        verificationCode
+      );
       const success = await verifyEmail(email, verificationCode);
+      console.log("verifyEmail returned:", success);
+
       if (success) {
+        console.log("Setting verification success to true");
         setVerificationSuccess(true);
+      } else {
+        console.log("Verification failed - success was falsy");
       }
     } catch (err) {
       // Error state is handled by the auth context
@@ -147,7 +158,7 @@ export default function EmailVerifyPage() {
                 isDarkMode ? "text-white" : "text-gray-900"
               }`}
             >
-              Node Dash
+              NodeDash
             </h1>
           </Link>
         </div>

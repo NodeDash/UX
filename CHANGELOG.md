@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the Node Dash will be documented in this file.
+All notable changes to the NodeDash will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Providers - setup chirpstack for automatic management of devices and flow of data to Node Dash
+- Providers - setup chirpstack for automatic management of devices and flow of data to NodeDash
 - 2FA - Secure your account with 2FA
 - Teams - Manage teams and members to share devices and flows.
 

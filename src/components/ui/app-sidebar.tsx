@@ -116,10 +116,10 @@ export function AppSidebar({
                 <Link to="/">
                   <img
                     src="/device-manager-icon.svg"
-                    alt="Node Dash"
+                    alt="NodeDash"
                     width="28px"
                   />
-                  <span className="text-base font-semibold">Node Dash</span>
+                  <span className="text-base font-semibold">NodeDash</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
