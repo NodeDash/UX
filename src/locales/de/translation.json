@@ -149,9 +149,9 @@
     "resendVerificationCode": "Bestätigungscode erneut senden",
     "verificationCodeSent": "Bestätigungscode an Ihre E-Mail gesendet",
     "verificationCodeFailed": "Fehler beim Senden des Bestätigungscodes. Bitte versuchen Sie es erneut.",
-    "emailVerificationRequired": "E-Mail-Bestätigung ist erforderlich, um auf diese Anwendung zuzugreifen.",
+    "emailVerificationRequired": "E-Mail-Verifizierung ist erforderlich, um auf diese Anwendung zuzugreifen.",
     "emailVerificationSent": "Eine Bestätigungs-E-Mail wurde an Ihre E-Mail-Adresse gesendet. Bitte überprüfen Sie Ihren Posteingang.",
-    "passwordRequirements": "Das Passwort muss die folgenden Anforderungen erfüllen:",
+    "passwordRequirements": "Das Passwort muss folgende Anforderungen erfüllen:",
     "atLeastEightChars": "Mindestens 8 Zeichen",
     "atLeastOneUppercase": "Mindestens ein Großbuchstabe",
     "atLeastOneLowercase": "Mindestens ein Kleinbuchstabe",
@@ -164,19 +164,25 @@
     "emailVerificationFailed": "E-Mail-Bestätigung fehlgeschlagen. Bitte versuchen Sie es erneut.",
     "success": "Erfolg",
     "emailVerified": "E-Mail bestätigt",
-    "proceedToLogin": "Zur Anmeldung",
+    "proceedToLogin": "Weiter zur Anmeldung",
     "setupMfa": "Zwei-Faktor-Authentifizierung einrichten",
     "setupMfaDescription": "Für zusätzliche Sicherheit richten Sie die Zwei-Faktor-Authentifizierung mit einer Authentifizierungs-App ein.",
     "scanQrCode": "Scannen Sie den QR-Code mit Ihrer Authentifizierungs-App",
     "scanQrCodeDescription": "Verwenden Sie eine Authentifizierungs-App wie Google Authenticator oder Authy, um den QR-Code zu scannen.",
     "enterCodeFromApp": "Geben Sie den von Ihrer Authentifizierungs-App generierten Code ein",
-    "verifyAndEnable": "Überprüfen und aktivieren",
-    "verifyMfa": "Zwei-Faktor-Authentifizierung überprüfen",
-    "enterMfaCode": "Geben Sie den Bestätigungscode aus Ihrer Authentifizierungs-App ein",
+    "verifyAndEnable": "Verifizieren und aktivieren",
+    "verifyMfa": "Zwei-Faktor-Authentifizierung verifizieren",
+    "enterMfaCode": "Geben Sie den Verifizierungscode aus Ihrer Authentifizierungs-App ein, um fortzufahren",
     "mfaCode": "Authentifizierungscode",
-    "mfaCodeLength": "Der Authentifizierungscode muss 6 Ziffern enthalten",
+    "mfaCodeLength": "Der Authentifizierungscode muss 6 Ziffern haben",
     "orEnterManually": "Oder geben Sie diesen Code manuell in Ihre App ein",
-    "continue": "Fortfahren"
+    "continue": "Fortfahren",
+    "emailVerifiedSuccessfully": "E-Mail erfolgreich verifiziert! Sie können sich jetzt anmelden.",
+    "passwordRequiresSpecial": "Das Passwort muss mindestens ein Sonderzeichen enthalten",
+    "passwordRequiresUppercase": "Das Passwort muss mindestens einen Großbuchstaben enthalten",
+    "passwordRequiresLowercase": "Das Passwort muss mindestens einen Kleinbuchstaben enthalten",
+    "passwordRequiresNumber": "Das Passwort muss mindestens eine Zahl enthalten",
+    "usernameAlreadyExists": "Benutzername existiert bereits"
   },
   "flows": {
     "add": "Fluss hinzufügen",
@@ -675,9 +681,9 @@
     "failedToLoadProviders": "Fehler beim Laden der Anbieter",
     "providerCreated": "Anbieter erfolgreich erstellt",
     "providerUpdated": "Anbieter erfolgreich aktualisiert",
-    "confirmDelete": "Sind Sie sicher, dass Sie diesen Anbieter löschen möchten?",
-    "providerDeleted": "Anbieter erfolgreich gelöscht",
     "editJsonConfig": "JSON-Konfiguration bearbeiten",
+    "confirmDeleteProvider": "Sind Sie sicher, dass Sie diesen Anbieter löschen möchten?",
+    "failedToDelete": "Fehler beim Löschen des Anbieters",
     "types": {
       "chirpstack": "ChirpStack",
       "email": "E-Mail",
@@ -685,6 +691,9 @@
       "generic": "Generisch",
       "webhook": "Webhook",
       "mqtt": "MQTT"
-    }
+    },
+    "confirmDelete": "Sind Sie sicher, dass Sie diesen Anbieter löschen möchten?",
+    "providerDeleted": "Anbieter erfolgreich gelöscht"
+    
   }
 }

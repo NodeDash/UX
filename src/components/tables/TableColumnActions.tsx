@@ -9,6 +9,7 @@ import {
   useDeleteIntegration,
   useDeleteLabel,
 } from "@/hooks/api";
+import { useDeleteProvider } from "@/hooks/api/useProviders";
 
 type EntityType =
   | "integration"
@@ -65,6 +66,7 @@ const TableColumnActions: React.FC<TableColumnActionsProps> = ({
   const { mutateAsync: deleteFlow } = useDeleteFlow();
   const { mutateAsync: deleteLabel } = useDeleteLabel();
   const { mutateAsync: deleteDevice } = useDeleteDevice();
+  const { mutateAsync: deleteProvider } = useDeleteProvider();
 
   const getDefaultMessages = () => {
     const typeKey = entityType.toLowerCase();
@@ -106,6 +108,9 @@ const TableColumnActions: React.FC<TableColumnActionsProps> = ({
           break;
         case "function":
           await deleteFunction(entityId);
+          break;
+        case "provider":
+          await deleteProvider(entityId);
           break;
         default:
           throw new Error("Unsupported entity type");

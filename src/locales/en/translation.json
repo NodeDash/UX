@@ -181,7 +181,8 @@
     "passwordRequiresSpecial": "Password must contain at least one special character",
     "passwordRequiresUppercase": "Password must contain at least one uppercase letter",
     "passwordRequiresLowercase": "Password must contain at least one lowercase letter",
-    "passwordRequiresNumber": "Password must contain at least one number"
+    "passwordRequiresNumber": "Password must contain at least one number",
+    "usernameAlreadyExists": "Username already exists"
   },
   "flows": {
     "add": "Add Flow",
@@ -233,19 +234,8 @@
     "flowDeleted": "Flow deleted successfully",
     "allFlowHistory": "All Flow History",
     "flowHistory": "Flow History",
-    "errorLoadingHistory": "Error loading flow history",
-    "flowStateDiff": "Flow State Differences",
-    "nodeContentDiff": "Node content differences",
-    "nodePositionDiff": "Node position differences",
-    "edgesDiff": "Edge differences",
-    "viewportDiff": "Viewport differences",
-    "noChangeDetected": "No differences detected",
-    "diffExplanation": "This shows differences between the flow state in the database and your current browser view.",
-    "lastUpdatedIgnored": "Note: The 'lastUpdated' timestamp field is ignored when detecting changes.",
-    "databaseValue": "Database Value",
-    "browserValue": "Browser Value",
-    "viewportOnly": "viewport only",
-    "showChanges": "Show Changes"
+    "errorLoadingHistory": "Error loading flow history"
+   
   },
   "providers": {
     "providers": "Providers",
@@ -286,7 +276,9 @@
     "providerUpdated": "Provider updated successfully",
     "confirmDelete":"Are you sure you want to delete this provider?",
     "providerDeleted": "Provider deleted successfully",
-    "editJsonConfig": "Edit JSON Configuration"
+    "editJsonConfig": "Edit JSON Configuration",
+    "confirmDeleteProvider": "Are you sure you want to delete this provider?",
+    "failedToDelete": "Failed to delete Provider"
   },
   "devices": {
     "add": "Add Device",

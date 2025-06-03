@@ -176,7 +176,13 @@
     "mfaCode": "Code d'authentification",
     "mfaCodeLength": "Le code d'authentification doit comporter 6 chiffres",
     "orEnterManually": "Ou entrez ce code manuellement dans votre application",
-    "continue": "Continuer"
+    "continue": "Continuer",
+    "emailVerifiedSuccessfully": "E-mail vérifié avec succès ! Vous pouvez maintenant vous connecter.",
+    "passwordRequiresSpecial": "Le mot de passe doit contenir au moins un caractère spécial",
+    "passwordRequiresUppercase": "Le mot de passe doit contenir au moins une lettre majuscule",
+    "passwordRequiresLowercase": "Le mot de passe doit contenir au moins une lettre minuscule",
+    "passwordRequiresNumber": "Le mot de passe doit contenir au moins un chiffre",
+    "usernameAlreadyExists": "Ce nom d'utilisateur existe déjà"
   },
   "flows": {
     "add": "Ajouter un flux",
@@ -685,6 +691,8 @@
     "providerUpdated": "Fournisseur mis à jour avec succès",
     "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce fournisseur ?",
     "providerDeleted": "Fournisseur supprimé avec succès",
-    "editJsonConfig": "Modifier la configuration JSON"
+    "editJsonConfig": "Modifier la configuration JSON",
+    "confirmDeleteProvider": "Êtes-vous sûr de vouloir supprimer ce fournisseur ?",
+    "failedToDelete": "Échec de la suppression du fournisseur"
   }
 }

@@ -301,7 +301,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       // Set specific error messages for common registration issues
       if (errorMsg.includes("email already exists")) {
         setError(t("auth.emailAlreadyExists"));
-      } else if (errorMsg.includes("username already exists")) {
+      } else if (
+        errorMsg.includes("user with this username already exists") ||
+        errorMsg.includes("username already exists")
+      ) {
         setError(t("auth.usernameAlreadyExists"));
       } else {
         setError(errorMsg);

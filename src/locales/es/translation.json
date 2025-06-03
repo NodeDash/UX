@@ -176,7 +176,13 @@
     "mfaCode": "Código de autenticación",
     "mfaCodeLength": "El código de autenticación debe tener 6 dígitos",
     "orEnterManually": "O ingrese este código manualmente en su aplicación",
-    "continue": "Continuar"
+    "continue": "Continuar",
+    "emailVerifiedSuccessfully": "¡Correo electrónico verificado con éxito! Ahora puede iniciar sesión.",
+    "passwordRequiresSpecial": "La contraseña debe contener al menos un carácter especial",
+    "passwordRequiresUppercase": "La contraseña debe contener al menos una letra mayúscula",
+    "passwordRequiresLowercase": "La contraseña debe contener al menos una letra minúscula",
+    "passwordRequiresNumber": "La contraseña debe contener al menos un número",
+    "usernameAlreadyExists": "El nombre de usuario ya existe"
   },
   "flows": {
     "add": "Agregar Flujo",
@@ -675,8 +681,8 @@
     "failedToLoadProviders": "Error al cargar proveedores",
     "providerCreated": "Proveedor creado exitosamente",
     "providerUpdated": "Proveedor actualizado exitosamente",
-    "confirmDelete": "¿Está seguro de que desea eliminar este proveedor?",
-    "providerDeleted": "Proveedor eliminado exitosamente",
+    "confirmDeleteProvider": "¿Está seguro de que desea eliminar este proveedor?",
+    "failedToDelete": "Error al eliminar el proveedor",
     "editJsonConfig": "Editar configuración JSON",
     "types": {
       "chirpstack": "ChirpStack",
@@ -685,6 +691,8 @@
       "generic": "Genérico",
       "webhook": "Webhook",
       "mqtt": "MQTT"
-    }
+    },
+    "confirmDelete": "¿Está seguro de que desea eliminar este proveedor?",
+    "providerDeleted": "Proveedor eliminado exitosamente"
   }
 }

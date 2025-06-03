@@ -104,6 +104,8 @@ export default function RegisterPage() {
     } catch (err) {
       // Error state is handled by the auth context
       console.error("Registration error:", err);
+      // Log the current error state from context for debugging
+      console.log("Current error in context:", error);
       setRegistrationSuccess(false);
     }
   };
