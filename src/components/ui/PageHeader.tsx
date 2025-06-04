@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { ActionButton } from "./index";
+import { ActionButton, DocumentTitle } from "./index";
 
 interface PageHeaderProps {
   // Remove the title prop if it's not being used
@@ -17,6 +17,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
 }) => {
   return (
     <div className="flex items-center gap-4 mb-4">
+      <DocumentTitle title={title} />
       <div className="flex items-center gap-2">
         {icon && <span className="text-2xl">{icon}</span>}
         <h1 className="text-2xl font-bold">{title}</h1>

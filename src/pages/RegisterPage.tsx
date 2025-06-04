@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { AtSign, Lock, User, AlertCircle } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import { useTheme } from "@/context/ThemeContext";
-import { LoadingSpinner } from "@/components/ui";
+import { DocumentTitle, LoadingSpinner } from "@/components/ui";
 import AuthErrorMessage from "@/components/ui/auth-error-message";
 import AuthFormField from "@/components/ui/auth-form-field";
 
@@ -126,6 +126,7 @@ export default function RegisterPage() {
         isDarkMode ? "bg-gray-900" : "bg-gray-50"
       } py-12 px-4 sm:px-6 lg:px-8`}
     >
+      <DocumentTitle title={t("auth.register")} />
       <div className="max-w-md w-full space-y-8">
         {/* Logo Section */}
         <div className="flex justify-center items-center pt-6">

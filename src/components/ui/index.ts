@@ -78,3 +78,5 @@ export {
   SidebarRail,
   SidebarSeparator
 } from './sidebar';
+
+export { default as DocumentTitle } from './DocumentTitle';

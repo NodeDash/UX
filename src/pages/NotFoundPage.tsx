@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "@/context/ThemeContext";
+import { DocumentTitle } from "@/components/ui";
 
 const NotFoundPage: React.FC = () => {
   const { t } = useTranslation();
@@ -10,6 +11,7 @@ const NotFoundPage: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-5 text-center">
+      <DocumentTitle title={t("notFound.title", "Page Not Found")} />
       <div
         className={`max-w-md w-full ${
           isDarkMode ? "text-gray-200" : "text-gray-800"

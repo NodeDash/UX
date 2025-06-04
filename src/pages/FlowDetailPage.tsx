@@ -25,6 +25,7 @@ import { useFlowNodes } from "../hooks/query/pages/useFlowNodes";
 import { useIsMobile } from "@/hooks/ux/use-mobile";
 import { useFlowData } from "../hooks/query/pages/useFlowData";
 import { useSaveFlow } from "@/hooks/api/useSaveFlow";
+import { DocumentTitle } from "@/components/ui";
 
 /**
  * Page component for viewing and editing a flow
@@ -118,6 +119,7 @@ const FlowDetailPage: React.FC = () => {
 
   return (
     <div className="page-container w-full h-full">
+      <DocumentTitle title={flow.name} />
       {/* Flow canvas with toolbar */}
       <FlowCanvasWrapper
         flowId={flowId}

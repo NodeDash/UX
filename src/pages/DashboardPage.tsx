@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { PageContainer, PageHeader } from "@/components/ui";
+import { DocumentTitle, PageContainer, PageHeader } from "@/components/ui";
 import { IconDashboard } from "@tabler/icons-react";
 import {
   DashboardStatsGrid,
@@ -24,6 +24,7 @@ const DashboardPage: React.FC = () => {
 
   return (
     <PageContainer>
+      <DocumentTitle title={t("dashboard.title", { owner: getLabel() })} />
       <PageHeader
         title={t("dashboard.title", { owner: getLabel() })}
         icon={<IconDashboard className="text-blue-600" size={24} />}

@@ -6,7 +6,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useTheme } from "@/context/ThemeContext";
 import AuthFormField from "@/components/ui/auth-form-field";
 import AuthErrorMessage from "@/components/ui/auth-error-message";
-import { LoadingSpinner } from "@/components/ui";
+import { DocumentTitle, LoadingSpinner } from "@/components/ui";
 
 /**
  * Reset Password Page component for setting a new password
@@ -116,6 +116,7 @@ export default function ResetPasswordPage() {
           isDarkMode ? "bg-gray-900" : "bg-gray-50"
         } py-12 px-4 sm:px-6 lg:px-8`}
       >
+        <DocumentTitle title={t("auth.passwordReset")} />
         <div
           className={`max-w-md w-full space-y-8
           ${isDarkMode ? "bg-gray-800" : "bg-white"} 

@@ -25,6 +25,7 @@ import { ThemeProvider } from "./context/ThemeContext";
 import { LanguageProvider } from "./context/LanguageContext";
 import { TeamProvider } from "./context/TeamContext";
 import { TranslationDebugger } from "./components/dev";
+import { DocumentTitle } from "@/components/ui";
 
 function App() {
   return (
@@ -37,6 +38,8 @@ function App() {
                 {process.env.NODE_ENV === "development" && (
                   <TranslationDebugger position="bottom-left" />
                 )}
+                <DocumentTitle />{" "}
+                {/* This will set the base title with environment info */}
                 <Routes>
                   {/* Public routes */}
                   <Route path="/login" element={<LoginPage />} />

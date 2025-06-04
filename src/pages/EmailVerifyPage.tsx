@@ -6,7 +6,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useTheme } from "@/context/ThemeContext";
 import AuthFormField from "@/components/ui/auth-form-field";
 import AuthErrorMessage from "@/components/ui/auth-error-message";
-import { LoadingSpinner } from "@/components/ui";
+import { DocumentTitle, LoadingSpinner } from "@/components/ui";
 
 /**
  * Email Verification Page component for verifying user email addresses
@@ -144,6 +144,7 @@ export default function EmailVerifyPage() {
         isDarkMode ? "bg-gray-900" : "bg-gray-50"
       } py-12 px-4 sm:px-6 lg:px-8`}
     >
+      <DocumentTitle title={t("auth.verifyEmail")} />
       <div className="max-w-md w-full space-y-8">
         {/* Logo Section */}
         <div className="flex justify-center items-center pt-6">

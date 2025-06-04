@@ -9,6 +9,7 @@ import {
   LoadingSpinner,
   LabelBadge,
   ActionButton,
+  DocumentTitle,
 } from "../components/ui";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "@/context/ThemeContext";
@@ -82,6 +83,7 @@ const DeviceDetailPage: React.FC = () => {
 
   return (
     <PageContainer>
+      <DocumentTitle title={device.name} />
       <div className="flex items-center justify-between mb-6">
         <ActionButton onClick={() => window.history.back()} variant="primary">
           {t("common.backToDevices")}

@@ -25,6 +25,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { Link } from "react-router-dom";
+import { config } from "@/services/config.service";
 
 interface AppSidebarProps {
   variant?: "default" | "inset";
@@ -116,10 +117,12 @@ export function AppSidebar({
                 <Link to="/">
                   <img
                     src="/device-manager-icon.svg"
-                    alt="NodeDash"
+                    alt={config.api.siteName}
                     width="28px"
                   />
-                  <span className="text-base font-semibold">NodeDash</span>
+                  <span className="text-base font-semibold">
+                    {config.api.siteName}
+                  </span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>

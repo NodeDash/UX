@@ -16,6 +16,11 @@ export const config = {
     baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8001',
     
     /**
+     * The site name from environment variables
+     */
+    siteName: import.meta.env.VITE_SITE_NAME || 'NodeDash',
+    
+    /**
      * API mode - 'demo' uses mock data, 'live' uses actual API
      */
     mode: import.meta.env.VITE_API_MODE || 'demo',
@@ -40,5 +45,13 @@ export const config = {
      * @returns {number} - The default refresh rate in milliseconds
      */
     getDefaultRefreshRate: () => Number(import.meta.env.VITE_DEFAULT_REFRESH_RATE) || 5000,
+  },
+  
+  /**
+   * Get the application title with environment information
+   * @returns {string} The formatted application title
+   */
+  getDocumentTitle: () => {
+    return `${config.api.siteName} ${isDevelopment ? '(Development)' : ''}`;
   }
 };
