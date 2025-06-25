@@ -103,6 +103,48 @@ class ApiClient {
   }
 
   /**
+   * Performs a POST request to the API with form data.
+   * @param {string} url - The API endpoint URL.
+   * @param {FormData} formData - Form data to send in the request body.
+   * @param {Object} config - Request configuration.
+   * @param {Record<string, unknown>} [config.params] - URL query parameters.
+   * @returns {Promise<T>} Promise resolving to the converted response data.
+   * @template T - Type of the expected response data.
+   */
+  async postFormData<T>(url: string, formData: FormData, config: { params?: Record<string, unknown> } = {}): Promise<T> {
+    try {
+      // Create config with multipart/form-data content type
+      const requestConfig = {
+        ...config,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        }
+      };
+      
+      const response = await axiosInstance.post<unknown>(this.mapUrlToOpenApi(url), formData, requestConfig);
+      return this.convertApiResponseToClientModel(url, response.data) as T;
+    } catch (error) {
+      // Better error handling for API validation errors
+      const axiosError = error as AxiosError;
+      if (axiosError.response?.data) {
+        console.error('API Error Response:', axiosError.response.data);
+        
+        // Handle FastAPI validation errors
+        const responseData = axiosError.response.data as any;
+        if (responseData && Array.isArray(responseData.detail)) {
+          const validationErrors = responseData.detail;
+          const errorFields = validationErrors.map((err: any) => {
+            return `${err.loc[err.loc.length - 1]}: ${err.msg}`;
+          }).join(', ');
+          
+          throw new Error(`Validation error: ${errorFields}`);
+        }
+      }
+      throw error;
+    }
+  }
+
+  /**
    * Performs a PUT request to the API.
    * @param {string} url - The API endpoint URL.
    * @param {Record<string, unknown>} data - Request body data.
@@ -137,6 +179,8 @@ class ApiClient {
    * @private
    */
   private mapUrlToOpenApi(url: string): string {
+
+    
     // Add /api/v1 prefix to align with OpenAPI spec
     if (!url.startsWith('/api/v1')) {
         return `/api/v1${url}`;

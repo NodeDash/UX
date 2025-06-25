@@ -64,14 +64,19 @@ interface MFAStatusResponse {
 
 /**
  * Authenticates a user with email/username and password.
- * @param {string} email - User's email address.
- * @param {string} username - User's username.
+ * @param {string} identifier - User's email address or username.
  * @param {string} password - User's password.
- * @param {string} rememberMe - Whether to keep the user logged in.
+ * @param {boolean} rememberMe - Whether to keep the user logged in.
  * @returns {Promise<LoginResult>} Promise resolving to login result.
  */
-export const loginUser = async (email: string, username: string, password: string, rememberMe: string): Promise<LoginResult> => {
-  return apiClient.post('/auth/login', { email, username, password, rememberMe });
+export const loginUser = async (identifier: string, password: string, rememberMe: boolean): Promise<LoginResult> => {
+  // Create form data for OAuth2 password flow
+  const formData = new FormData();
+  formData.append('username', identifier); // OAuth2 expects 'username' field, which accepts email or username
+  formData.append('password', password);
+  formData.append('remember_me', rememberMe ? 'true' : 'false');
+  
+  return apiClient.postFormData('/auth/login', formData)
 };
 
 /**

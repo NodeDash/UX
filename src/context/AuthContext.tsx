@@ -183,26 +183,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setLoginLoading(true);
       setError(null);
 
-      // Check if identifier is an email or username
-      const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(identifier);
+      const response = await loginUser(identifier, password, rememberMe);
 
-      let email = "";
-      let username = "";
-      if (isEmail) {
-        email = identifier;
-      } else {
-        username = identifier;
-      }
-
-      // Create appropriate payload based on identifier type
-      const response = await loginUser(
-        email,
-        username,
-        password,
-        rememberMe ? "true" : "false"
-      );
-
-      if ("mfa_required" in response && response.mfa_required) {
+      if (response.mfa_required) {
         // Handle MFA challenge
         setIsMfaRequired(true);
         if (response.session_id && response.email) {
@@ -213,9 +196,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         }
         // Navigate to MFA verification page
         navigate("/mfa-verify");
-      } else if ("access_token" in response) {
+      } else if (response.access_token) {
         // Standard login flow
-        localStorage.setItem("auth_token", response.access_token as string);
+        localStorage.setItem("auth_token", response.access_token);
         const userData = await verifyTokenUser();
         setUser(userData);
         setIsAuthenticated(true);
