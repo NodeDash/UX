@@ -10,18 +10,21 @@ interface NodeSelectorModalProps {
   onSelectNodeType: (
     type: "device" | "function" | "integration" | "label" | "storage"
   ) => void;
+  enableStorage?: boolean;
 }
 
 const NodeSelectorModal: React.FC<NodeSelectorModalProps> = ({
   isOpen,
   onClose,
   onSelectNodeType,
+  enableStorage = false,
 }) => {
   const { t } = useTranslation();
 
   // Use our custom hook
   const { nodeTypes, isDarkMode, handleSelectNodeType } = useNodeSelectorModal({
     onSelectNodeType,
+    enableStorage,
   });
 
   return (

@@ -68,6 +68,7 @@ export function StorageNode({ data }: NodeProps<StorageNode>) {
           border: `2px solid ${backgroundColor}`,
         }}
       />
+      <Handle type="source" position={Position.Right} />
     </div>
   );
 }

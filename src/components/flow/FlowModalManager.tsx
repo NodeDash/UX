@@ -118,6 +118,7 @@ const FlowModalManager: React.FC<FlowModalManagerProps> = ({
         isOpen={isNodeSelectorOpen}
         onClose={() => setIsNodeSelectorOpen(false)}
         onSelectNodeType={handleNodeTypeSelect}
+        enableStorage={influxProviders.length > 0}
       />
 
       <EntitySelectorModal
