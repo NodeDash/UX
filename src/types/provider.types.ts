@@ -7,6 +7,7 @@ export enum ProviderType {
   chirpstack = 'chirpstack',
   email = 'email',
   sms = 'sms',
+  influxdb = 'influxdb', // New storage provider
 }
 
 /**
@@ -48,6 +49,18 @@ export interface SmsProviderConfig extends ProviderConfig {
 }
 
 /**
+ * InfluxDB provider configuration
+ */
+export interface InfluxDbProviderConfig extends ProviderConfig {
+  url: string;
+  org: string;
+  bucket: string;
+  token: string;
+  verify_ssl?: boolean;
+  precision?: 'ns' | 'us' | 'ms' | 's';
+}
+
+/**
  * Webhook provider configuration
  */
 export interface WebhookProviderConfig extends ProviderConfig {
@@ -56,7 +69,6 @@ export interface WebhookProviderConfig extends ProviderConfig {
   headers?: Record<string, string>;
   auth_token?: string;
 }
-
 
 /**
  * Generic provider configuration - customize as needed

@@ -8,7 +8,7 @@ interface NodeSelectorModalProps {
   isOpen: boolean;
   onClose: () => void;
   onSelectNodeType: (
-    type: "device" | "function" | "integration" | "label"
+    type: "device" | "function" | "integration" | "label" | "storage"
   ) => void;
 }
 
@@ -119,6 +119,23 @@ const NodeSelectorModal: React.FC<NodeSelectorModalProps> = ({
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
+                  />
+                </svg>
+              )}
+              {type.id === "storage" && (
+                <svg
+                  className={`w-6 h-6 ${
+                    isDarkMode ? "text-blue-300" : "text-blue-500"
+                  }`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 5c0-1.105 3.582-2 8-2s8 .895 8 2-3.582 2-8 2-8-.895-8-2zm16 0v14c0 1.105-3.582 2-8 2s-8-.895-8-2V5m16 6c0 1.105-3.582 2-8 2s-8-.895-8-2m16 4c0 1.105-3.582 2-8 2s-8-.895-8-2"
                   />
                 </svg>
               )}

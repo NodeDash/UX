@@ -11,6 +11,7 @@ export function useFlowModalState() {
   const [integrationSelectorOpen, setIntegrationSelectorOpen] = useState(false);
   const [deviceSelectorOpen, setDeviceSelectorOpen] = useState(false);
   const [labelSelectorOpen, setLabelSelectorOpen] = useState(false);
+  const [storageSelectorOpen, setStorageSelectorOpen] = useState(false);
 
   /**
    * Handles selection of a node type and opens the appropriate entity selector modal
@@ -18,7 +19,7 @@ export function useFlowModalState() {
    * @param nodeType - The type of node selected in the node selector
    */
   const handleNodeTypeSelect = useCallback(
-    (nodeType: "device" | "function" | "integration" | "label") => {
+    (nodeType: "device" | "function" | "integration" | "label" | "storage") => {
       setIsNodeSelectorOpen(false);
 
       // For entity-based nodes, open entity selector modal
@@ -30,6 +31,8 @@ export function useFlowModalState() {
         setDeviceSelectorOpen(true);
       } else if (nodeType === "label") {
         setLabelSelectorOpen(true);
+      } else if (nodeType === "storage") {
+        setStorageSelectorOpen(true);
       }
     },
     []
@@ -46,6 +49,8 @@ export function useFlowModalState() {
     setDeviceSelectorOpen,
     labelSelectorOpen,
     setLabelSelectorOpen,
+    storageSelectorOpen,
+    setStorageSelectorOpen,
     handleNodeTypeSelect
   };
 }

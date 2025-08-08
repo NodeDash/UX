@@ -690,7 +690,8 @@
       "sms": "SMS",
       "generic": "Genérico",
       "webhook": "Webhook",
-      "mqtt": "MQTT"
+      "mqtt": "MQTT",
+      "influxdb": "InfluxDB"
     },
     "confirmDelete": "¿Está seguro de que desea eliminar este proveedor?",
     "providerDeleted": "Proveedor eliminado exitosamente"

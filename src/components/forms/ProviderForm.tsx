@@ -82,7 +82,7 @@ const ProviderForm: React.FC<ProviderFormProps> = ({
             key: "CHIRPSTACK_API_SERVER",
             label: "API Server",
             type: "string",
-            defaultValue: "api.eu1.hosted-lns.trackpac.io",
+            defaultValue: "",
             required: true,
           },
           {
@@ -111,6 +111,49 @@ const ProviderForm: React.FC<ProviderFormProps> = ({
             type: "string",
             defaultValue: "",
             required: true,
+          },
+        ];
+      case ProviderType.influxdb:
+        return [
+          {
+            key: "url",
+            label: "URL",
+            type: "string",
+            defaultValue: "",
+            required: true,
+          },
+          {
+            key: "org",
+            label: "Organization",
+            type: "string",
+            defaultValue: "",
+            required: true,
+          },
+          {
+            key: "bucket",
+            label: "Bucket",
+            type: "string",
+            defaultValue: "",
+            required: true,
+          },
+          {
+            key: "token",
+            label: "Token",
+            type: "string",
+            defaultValue: "",
+            required: true,
+          },
+          {
+            key: "verify_ssl",
+            label: "Verify SSL",
+            type: "boolean",
+            defaultValue: true,
+          },
+          {
+            key: "precision",
+            label: "Precision",
+            type: "string",
+            defaultValue: "ns",
           },
         ];
       case ProviderType.email:
@@ -556,7 +599,10 @@ const ProviderForm: React.FC<ProviderFormProps> = ({
               <option value={ProviderType.chirpstack}>
                 {t("providers.types.chirpstack")}
               </option>
-              {/*
+              <option value={ProviderType.influxdb}>
+                {t("providers.types.influxdb")}
+              </option>
+              {/**
              commented out for future use
              <option value={ProviderType.EMAIL}>
                 {t("providers.types.email")}

@@ -270,7 +270,8 @@
       "sms": "SMS",
       "generic": "Generic",
       "webhook": "Webhook",
-      "mqtt": "MQTT"
+      "mqtt": "MQTT",
+      "influxdb": "InfluxDB"
     },
     "providerCreated": "Provider created successfully",
     "providerUpdated": "Provider updated successfully",

@@ -683,7 +683,8 @@
       "sms": "SMS",
       "generic": "Générique",
       "webhook": "Webhook",
-      "mqtt": "MQTT"
+      "mqtt": "MQTT",
+      "influxdb": "InfluxDB"
     },
     "errorCreating": "Erreur lors de la création du fournisseur",
     "failedToLoadProviders": "Échec du chargement des fournisseurs",

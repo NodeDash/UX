@@ -1,6 +1,8 @@
 import React from "react";
 import NodeSelectorModal from "../modals/NodeSelectorModal";
 import EntitySelectorModal from "../modals/EntitySelectorModal";
+import { useProviders } from "@/hooks/api";
+import { ProviderType } from "@/types/provider.types";
 
 interface FlowModalManagerProps {
   functions: any[];
@@ -40,8 +42,10 @@ interface FlowModalManagerProps {
     setDeviceSelectorOpen: React.Dispatch<React.SetStateAction<boolean>>;
     labelSelectorOpen: boolean;
     setLabelSelectorOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    storageSelectorOpen: boolean;
+    setStorageSelectorOpen: React.Dispatch<React.SetStateAction<boolean>>;
     handleNodeTypeSelect: (
-      nodeType: "device" | "function" | "integration" | "label"
+      nodeType: "device" | "function" | "integration" | "label" | "storage"
     ) => void;
   };
 }
@@ -70,8 +74,16 @@ const FlowModalManager: React.FC<FlowModalManagerProps> = ({
     setDeviceSelectorOpen,
     labelSelectorOpen,
     setLabelSelectorOpen,
+    storageSelectorOpen,
+    setStorageSelectorOpen,
     handleNodeTypeSelect,
   } = modalState;
+
+  // Load providers and filter for InfluxDB
+  const { data: providers = [] } = useProviders();
+  const influxProviders = providers.filter(
+    (p) => p.provider_type === ProviderType.influxdb
+  );
 
   // Entity selection handlers
   const handleFunctionSelect = (func: any) => {
@@ -92,6 +104,12 @@ const FlowModalManager: React.FC<FlowModalManagerProps> = ({
   const handleLabelSelect = (label: any) => {
     setLabelSelectorOpen(false);
     createNode("label", label.id, label.name);
+  };
+
+  const handleStorageSelect = (provider: any) => {
+    setStorageSelectorOpen(false);
+    // Create a storage node associated with the selected provider
+    createNode("storage", provider.id, provider.name);
   };
 
   return (
@@ -136,6 +154,16 @@ const FlowModalManager: React.FC<FlowModalManagerProps> = ({
         title="labels.title"
         onSelect={handleLabelSelect}
         existingEntityIds={getExistingEntityIds("label")}
+      />
+
+      {/* Storage selector only if we have at least one influx provider */}
+      <EntitySelectorModal
+        isOpen={storageSelectorOpen}
+        onClose={() => setStorageSelectorOpen(false)}
+        entities={influxProviders}
+        title="storage.title"
+        onSelect={handleStorageSelect}
+        existingEntityIds={getExistingEntityIds("storage")}
       />
     </>
   );

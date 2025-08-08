@@ -311,6 +311,12 @@ const StatusBadge: React.FC<StatusBadgeProps> = ({
             {t("providers.types.sms")}
           </span>
         );
+      case "influxdb":
+        return (
+          <span className={`${baseClasses} ${bgBlue} border ${borderBlue}`}>
+            {t("providers.types.influxdb")}
+          </span>
+        );
       default:
         return (
           <span
